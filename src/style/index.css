@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aquamarine;
+  justify-content: space-evenly;
+  height: 50vh;
+  border: 5px solid brown;
+}
+
+[type="text"] {
+  border: 0px;
+  border-bottom: 5px solid black;
+  /* background-color: rgb(183, 167, 204); */
+  font-size: 1.5em;
+  text-align: center;
+}

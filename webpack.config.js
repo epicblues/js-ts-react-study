@@ -1,5 +1,6 @@
 const path = require("path");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+// 실행 주체가 Node 이므로 import를 쓰면 안된다. babel 적용 이전 시점
 
 module.exports = {
   name: "Webpack-React-TypeScript-CSS-HTML", // 큰 의미는 없다.
