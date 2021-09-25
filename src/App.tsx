@@ -301,6 +301,24 @@ console.log(filteredArray);
 console.log(multipliedArray);
 
 
+
+class CustomClass {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  name: string;
+  age: number;
+  play() {
+
+  }
+  static staticData: string = 'muyaho'
+
+}
+console.log(CustomClass.prototype);
+console.log(JSON.stringify(new CustomClass('kms', 20)));
+
+
 function App() {
   return (
     <div>

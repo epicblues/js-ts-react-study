@@ -76,6 +76,19 @@ console.log(user1.staticVar);
 user1.__proto__ = { kms: "its new defined prototype sad" };
 console.log(user1.staticVar);
 
+
+const resolveElement = (value) => <h1>{value}</h1>
+
+
+const a = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('success'), 5000);
+})
+
+
+// resolve 함수의 기능 -> 만들어진 promise 객체의 status를 fulfilled로 바꾸고 value를 넣은 인자값으로 바꿔준다. 실제 콜백은 여기에서 만드는 것이 아니다.
+// reject 함수의 기능 -> 만들어진 promise 객체의 status를 rejected로 바꾸고 value를 (보통 에러 객체) 선택적으로 전달한다.
+
+
 export class OOP extends Component {
   render() {
     return (
