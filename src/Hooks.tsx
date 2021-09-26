@@ -2,6 +2,23 @@ import React, { useEffect, useState } from 'react'
 
 function Timer() {
   const [time, setTime] = useState(new Date());
+  const quotes = [
+    { quote: "babo1", name: "kms1" },
+    { quote: "babo2", name: "kms2" },
+    { quote: "babo3", name: "kms3" },
+    { quote: "babo4", name: "kms4" },
+    { quote: "babo5", name: "kms5" },
+    { quote: "babo6", name: "kms6" },
+    { quote: "babo7", name: "kms7" },
+    { quote: "babo8", name: "kms8" },
+    { quote: "babo9", name: "kms9" },
+    { quote: "babo10", name: "kms10" },
+  ]
+  const randomNum = Math.floor(Math.random() * quotes.length)
+  const [quote, setQuote] = useState(quotes[randomNum]);
+
+
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date());
@@ -21,7 +38,10 @@ function Timer() {
   }
 
 
-  return <h2>{beautifyTimes(time.getHours())}:{beautifyTimes(time.getMinutes())}:{beautifyTimes(time.getSeconds())}</h2>
+  return <>
+    <h2>{beautifyTimes(time.getHours())}:{beautifyTimes(time.getMinutes())}:{beautifyTimes(time.getSeconds())}</h2>
+    <p>"{quote.name} : {quote.quote}"</p>
+  </>
 }
 
 
