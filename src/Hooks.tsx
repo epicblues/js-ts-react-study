@@ -17,10 +17,11 @@ function Timer() {
   }, [])
 
   function beautifyTimes(time: number) {
-    return time >= 10 ? time : "0" + time
+    return String(time).padStart(2, '0');
   }
 
-  return <h2>{beautifyTimes(time.getHours())}:{beautifyTimes(time.getSeconds())}</h2>
+
+  return <h2>{beautifyTimes(time.getHours())}:{beautifyTimes(time.getMinutes())}:{beautifyTimes(time.getSeconds())}</h2>
 }
 
 
