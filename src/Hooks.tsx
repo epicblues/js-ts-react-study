@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useRef, useState } from 'react'
+import Ref from './components/Ref';
 function Timer() {
   const [time, setTime] = useState(new Date());
   const quotes = [
@@ -47,9 +47,11 @@ function Timer() {
 
 function App() {
 
+
   const [timerSwitch, setTimerSwitch] = useState(true);
+  const inputRef = useRef<HTMLInputElement>();
   return (
-    <div>
+    <div className="container">
 
       <h1>Hello World</h1>
       <button onClick={() => setTimerSwitch(!timerSwitch)}>Timer {timerSwitch ? "OFF" : "ON"}</button>
@@ -57,9 +59,9 @@ function App() {
         timerSwitch && <Timer />
       }
       <div>
-        <input type="text" placeholder="Test Hot Reload" />
+        <input ref={inputRef} type="text" placeholder="Test Hot Reload" />
       </div>
-
+      <Ref inputRef={inputRef} />
     </div>
   )
 }

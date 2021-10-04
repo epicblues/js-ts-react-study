@@ -56,7 +56,7 @@ class ClassedUser {
 
 const user1 = userCreator("Will", 3);
 const user2 = userCreator("Tim", 5);
-const user3 = new User('Kim', 15); // 한 번 생성자로 생성되면 __proto__가 그 생성되는 순간에 고정되며, 이후에 생성자의 prototype주소를 바꾼다고 해도 이미 생성된 인스턴스에는 영향을 주지 않는다.
+const user3 = new User('Kim', 15); // 한 번 생성자로 생성되면 (Object.create(prototype))__proto__가 그 생성되는 순간에 고정되며, 이후에 생성자의 prototype주소를 바꾼다고 해도 이미 생성된 인스턴스에는 영향을 주지 않는다.
 const user4 = new ClassedUser("James", 5);
 console.log(ClassedUser.prototype);
 // user4.__proto__ = functionStore;
