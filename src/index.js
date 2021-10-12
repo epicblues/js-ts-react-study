@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Hooks";
+import App from "./App";
 
-// import OOP from "./OOP";
-import _ from "./style/index";
+import OOP from "./OOP";
+import css from "./style/index";
+
+import funcArray from "./function";
 
 ReactDOM.render(<App />, document.querySelector("#root"));
 
