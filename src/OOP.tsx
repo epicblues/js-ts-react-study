@@ -88,6 +88,67 @@ const a = new Promise((resolve, reject) => {
 // resolve 함수의 기능 -> 만들어진 promise 객체의 status를 fulfilled로 바꾸고 value를 넣은 인자값으로 바꿔준다. 실제 콜백은 여기에서 만드는 것이 아니다.
 // reject 함수의 기능 -> 만들어진 promise 객체의 status를 rejected로 바꾸고 value를 (보통 에러 객체) 선택적으로 전달한다.
 
+// DOM Object의 구성 내용
+const html = {
+  startTag: 'html',
+  contents: [
+    {
+      startTag: 'head',
+      contents: []
+    }
+    , {
+      startTag: 'body',
+      contents: []
+    }
+  ]
+}
+
+// 자바스크립트 엔진의 토큰, 어휘 분석
+// const foo = 10; 을 토큰화
+const Tokenized = [
+  {
+    type: 'keyword',
+    value: 'const'
+  },
+  {
+    type: 'name',
+    value: 'foo'
+  },
+  {
+    type: '=',
+    value: '='
+  },
+  {
+    type: 'num',
+    value: 10
+  },
+  {
+    type: ';',
+    value: ';'
+  }
+]
+
+const AST = {
+  "type": "Program",
+  "body": [{
+    "type": "VaraibleDeclaration",
+    "declarations": [{
+      "type": "VariableDeclarator",
+      "id": {
+        "type": "Identifier",
+        "name": "foo"
+      },
+      "init": {
+        "type": "Literal",
+        "value": 10
+      }
+    }],
+    "kind": "const"
+  }],
+  "sourceType": "script"
+}
+
+
 
 export class OOP extends Component {
   render() {

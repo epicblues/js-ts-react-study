@@ -1,4 +1,4 @@
-import React, { CSSProperties, useEffect, useRef } from 'react'
+import React, { CSSProperties, FunctionComponent, FunctionComponentElement, useEffect, useRef } from 'react'
 
 const containerCss: CSSProperties = {
   margin: "10px 4px",
@@ -7,7 +7,7 @@ const containerCss: CSSProperties = {
 
 
 
-function Ref({ inputRef }: { inputRef: React.MutableRefObject<HTMLInputElement> }) {
+function Ref({ inputRef }): FunctionComponentElement<{ inputRef: React.MutableRefObject<HTMLInputElement> }> {
 
 
   const titleRef = useRef<HTMLHeadingElement>();
